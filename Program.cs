@@ -10,8 +10,8 @@ namespace ttiMegoldasCS
     {
         static void Main(string[] args)
         {
-            int tomegKG = 1;
-            int magassagCM = 1;
+            int tomegKG;
+            int magassagCM;
             double magassagM;
             double bmi;
             string nev;
@@ -31,7 +31,7 @@ namespace ttiMegoldasCS
                         Console.Write("Adja meg a magasságát cm-ben, egész számra kerekítve: ");
                         magassagCM = Convert.ToInt32(Console.ReadLine());
                     }
-                    while (0 > magassagCM || magassagCM >= 300 || 0 > tomegKG || tomegKG >= 600);
+                    while (0 > magassagCM || magassagCM > 300 || 0 > tomegKG || tomegKG > 600);
 
                     
                     magassagM = Convert.ToDouble(magassagCM) / 100;
@@ -42,19 +42,19 @@ namespace ttiMegoldasCS
                     {
                         Console.WriteLine(nev + " testtömegindexe " + Math.Round(bmi, 2) + ": kórosan sovány");
                     }
-                    else if (16 < bmi && bmi <= 18.5)
+                    else if (16 <= bmi && bmi < 18.5)
                     {
                         Console.WriteLine(nev + " testtömegindexe " + Math.Round(bmi, 2) + ": sovány");
                     }
-                    else if (18.5 < bmi && bmi <= 25)
+                    else if (18.5 <= bmi && bmi < 25)
                     {
                         Console.WriteLine(nev + " testtömegindexe " + Math.Round(bmi, 2) + ": normális");
                     }
-                    else if (25 < bmi && bmi <= 40)
+                    else if (25 <= bmi && bmi < 40)
                     {
                         Console.WriteLine(nev + " testtömegindexe " + Math.Round(bmi, 2) + ": túlsúlyos/elhízott");
                     }
-                    else if (bmi > 40)
+                    else if (bmi >= 40)
                     {
                         Console.WriteLine(nev + " testtömegindexe " + Math.Round(bmi, 2) + ": kórosan elhízott");
                     }
